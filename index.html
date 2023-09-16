@@ -4,12 +4,12 @@
     
 
 <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>DiCLET-TTS: Diffusion model based cross-lingual emotion transfer for text-to-speech</title>
+<title>U-Style: U-net driven Zero-Shot Speaker and Style Cloning For End-to-End Speech Synthesis</title>
 <meta name="generator" content="Jekyll v3.9.0">
 <meta property="og:title" content="TODO: title">
 <meta property="og:locale" content="en_US">
-<link rel="canonical" href="https://silyfox.github.io/DiCLETdemo/">
-<meta property="og:url" content="https://silyfox.github.io/DiCLETdemo/">
+<link rel="canonical" href="https://silyfox.github.io/ustyle/">
+<meta property="og:url" content="https://silyfox.github.io/ustyle/">
 <meta name="twitter:card" content="summary">
 <!-- End Jekyll SEO tag -->
 
@@ -26,11 +26,10 @@
     </section>
 
 <section class="main-content">
-      <h1 id=""><center>DiCLET-TTS: Diffusion model based cross-lingual emotion transfer for text-to-speech</center></h1>
+      <h1 id=""><center>U-Style: U-net driven Zero-Shot Speaker and Style Cloning For End-to-End Speech Synthesis</center></h1>
 
-<center> Tao Li, Chenxu Hu, Jian Cong, Xinfa Zhu, Jingbei Li, Qiao Tian, Yuping Wang, Lei Xie, </center>
+<center> Tao Li, Zhichao Wang, Xinfa Zhu, Jian Cong, Yuanjun Lv, Qiao Tian, Yuping Wang, Lei Xie </center>
 <center> Northwestern Polytechnical University </center>
-<center> Tsinghua University </center> 
 <center> Audio, and Music Intelligence (SAMI) Group, ByteDance </center>
 
 <h2>0. Contents</h2>
@@ -44,12 +43,15 @@
 
 <br><br>
 <h2 id="abstract">1. Abstract<a name="abstract"></a></h2>
-<p>While the performance of cross-lingual TTS based on monolingual corpora has been significantly improved recently, generating cross-lingual speech still suffers from the foreign accent problem, leading to limited naturalness. Besides, current cross-lingual methods ignore modeling emotion, which is indispensable paralinguistic information in speech delivery.  
-  In this paper, we propose DiCLET-TTS, a Diffusion model based Cross-Lingual Emotion Transfer method that can transfer emotion from a source speaker to the within or cross-lingual target speaker.
-  Specifically, to relieve the foreign accent problem while improving the emotion expressiveness, the terminal distribution of the diffusion process is parameterized into a speaker-irrelevant but emotion-related linguistic prior by a prior text encoder with the emotion embedding as a condition.
-  To address the weaker emotional expressiveness problem caused by speaker disentanglement in emotion embedding, a novel orthogonal projection based emotion disentangling module (OP-EDM) is proposed to learn the speaker-irrelevant but emotion discriminative emotion embedding. 
-  Moreover, to effectively guide the speaker and emotion in the generation process, a condition-enhanced DPM decoder is introduced to strengthen the modeling ability of the speaker and the emotion in the reverse diffusion process.
-  Extensive experiments have been conducted on five monolingual corpora. Compared to state-of-the-art methods, the DiCLET-TTS gets the best performance on both cross-lingual and emotion transfer tasks, indicating that the DiCLET-TTS can synthesize reasonable Chinese emotional speech for the within and cross-lingual target speakers, and the advantage of OP-EDM in learning disentangled emotion embedding for emotion transfer. 
+<p>Zero-shot speaker cloning text-to-speech (TTS) aims to synthesize speech with unseen target speaker timbre derived from a single reference speech. 
+  However, the naturalness and speaker similarity of synthesized speech by existing methods are still undesirable, and endowing the target speaker with arbitrary styles is not considered, 
+  i.e., zero-shot speaker and style cloning, where a unique challenge is learning the disentangled speaker and style representation from the references with arbitrary speakers and styles. 
+  To address the above challenges, we propose \textbf{U-style}, employing Grad-TTS as the backbone, introducing a speaker-specific and a style-specific converter between the text encoder 
+  and the diffusion decoder, decomposing U-style into speaker- and style-specific modeling parts via signal perturbation between the two converters to achieve speaker and style disentanglement 
+  automatically. 
+  To improve unseen speaker and style modeling ability, these two converters conduct multi-level speaker and style modeling by skip-connected U-net, which incorporates the representation 
+  extraction and information reconstruction process. 
+  Besides, to improve the naturalness of synthesized speech, we adopt mean-based instance normalization and style adaptive layer normalization pairs in these converters to perform representation extraction and condition adaptation, respectively. Experimental results show that U-style surpasses the state-of-the-art methods regarding naturalness and speaker similarity on unseen speaker cloning, and can further transfer the style from an unseen source speaker to another unseen target speaker.
 </p>
 <h3>1.1 The structure of the proposed model:</h3>
 	<center><img src='diclet.png'></center>
