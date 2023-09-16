@@ -36,18 +36,29 @@
 <h2>0. Contents</h2>
 <ol>
   <li><a href="#abstract">Abstract</a></li>
-  <li><a href="#Comparison">Demos -- Emotional speech synthesis by transferring the emotion from reference audio</a></li>
-  <li><a href="#ablation 4.2.1">Demos -- The necessity of emotion embedding and prosody compensation</a></li>
-  <li><a href="#ablation 4.2.2">Demos -- The effectiveness of GC block</a></li>
-  <li><a href="#db6 demo">Additional demos -- Transfer emotion to a new target speaker who only has 200 sentences through simple fine-tuning</a></li>
+  <li><a href="#Comparison">Demos -- zero-shot speaker cloning</a></li>
+  <li><a href="#Component analysis VI-A">Demos -- zero-shot speaker and style cloning</a></li>
+  <li><a href="#Component analysis VI-B">Additional demos -- zero-shot speaker cloning</a></li>
+  <li><a href="#Component analysis VI-C">Additional demos -- zero-shot speaker and style cloning</a></li>
 </ol>
 
 <br><br>
 <h2 id="abstract">1. Abstract<a name="abstract"></a></h2>
-<p>Cross-speaker emotion transfer speech synthesis aims to synthesize emotional speech for a target speaker by transferring the emotion from reference recorded by another (source) speaker, in which task extracting speaker-independent emotion embedding from reference plays an important role. However, the emotional information of such emotion embedding tends to be weakened in the process to squeeze out the source speaker's timbre information. In this paper, a prosody compensation module (PCM) is proposed to compensate emotional information for the disentangled emotion embedding. Specifically, the PCM tries to obtain speaker-independent emotional information from the intermediate feature of a pre-trained ASR model. To this end, a prosody compensation encoder with global context (GC) blocks is introduced to obtain global emotional information from the ASR model's intermediate feature. Experiments demonstrate that the proposed PCM can effectively compensate emotional information to the emotion embedding, and meanwhile maintain the timbre of the target speaker. Comparisons with state-of-the-art models show that our proposed method presents obvious superiority on the cross-speaker emotion transfer task.
+<p>Zero-shot speaker cloning text-to-speech (TTS) aims to synthesize speech with unseen target speaker timbre derived from a single reference speech. 
+  However, the naturalness and speaker similarity of synthesized speech by existing methods are still undesirable, and endowing the target speaker with arbitrary styles is not considered, 
+  i.e., zero-shot speaker and style cloning, where a unique challenge is learning the disentangled speaker and style representation from the references with arbitrary speakers and styles. 
+  To address the above challenges, we propose \textbf{U-style}, employing Grad-TTS as the backbone, introducing a speaker-specific and a style-specific converter between the text encoder 
+  and the diffusion decoder, decomposing U-style into speaker- and style-specific modeling parts via signal perturbation between the two converters to achieve speaker and style disentanglement 
+  automatically. 
+  To improve unseen speaker and style modeling ability, these two converters conduct multi-level speaker and style modeling by skip-connected U-net, which incorporates the representation 
+  extraction and information reconstruction process. 
+  Besides, to improve the naturalness of synthesized speech, we adopt mean-based instance normalization and style adaptive layer normalization pairs in these converters to perform representation
+  extraction and condition adaptation, respectively. Experimental results show that U-style surpasses the state-of-the-art methods regarding naturalness and speaker similarity on unseen speaker cloning, 
+  and can further transfer the style from an unseen source speaker to another unseen target speaker.
+
 </p>
 <h3>1.1 The structure of the proposed model:</h3>
-	<center><img src='taslp_gcpc_2.png'></center>
+	<center><img src='U-style.png'></center>
 <br><br>
 <h3>1.2 The structure of global context (GC) blocks:</h3>
 	<center><img src='gc_encoder.png'></center>
