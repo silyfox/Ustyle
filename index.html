@@ -49,19 +49,17 @@
   i.e., zero-shot speaker and style cloning, where a unique challenge is learning the disentangled speaker and style representation from the references with arbitrary speakers and styles. 
   To address the above challenges, we propose \textbf{U-style}, employing Grad-TTS as the backbone, introducing a speaker-specific and a style-specific converter between the text encoder 
   and the diffusion decoder, decomposing U-style into speaker- and style-specific modeling parts via signal perturbation between the two converters to achieve speaker and style disentanglement 
-  automatically. 
-  To improve unseen speaker and style modeling ability, these two converters conduct multi-level speaker and style modeling by skip-connected U-net, which incorporates the representation 
-  extraction and information reconstruction process. 
-  Besides, to improve the naturalness of synthesized speech, we adopt mean-based instance normalization and style adaptive layer normalization pairs in these converters to perform representation
-  extraction and condition adaptation, respectively. Experimental results show that U-style surpasses the state-of-the-art methods regarding naturalness and speaker similarity on unseen speaker cloning, 
-  and can further transfer the style from an unseen source speaker to another unseen target speaker.
+  automatically. To improve unseen speaker and style modeling ability, these two converters conduct multi-level speaker and style modeling by skip-connected U-net, which incorporates the 
+  representation extraction and information reconstruction process. Besides, to improve the naturalness of synthesized speech, we adopt mean-based instance normalization and style adaptive 
+  layer normalization pairs in these converters to perform representation extraction and condition adaptation, respectively. Experimental results show that U-style surpasses the 
+  state-of-the-art methods regarding naturalness and speaker similarity on unseen speaker cloning, and can further transfer the style from an unseen source speaker to another unseen target speaker.
 
 </p>
 <h3>1.1 The structure of the proposed model:</h3>
 	<center><img src='U-style.png'></center>
 <br>
 
-<h2>2. Demos -- Comparison with other methods<a name="Comparison"></a></h2>
+<h2>2. Demos -- Comparison with other methods in speaker cloning task<a name="Comparison"></a></h2>
 <h3>Corresponding to section IV-G in the paper, several samples synthesized by the proposed U-style and other compared methods on the zero-shot speaker cloning task are listed below.</h3>
 <table>
   <thead>
@@ -82,12 +80,12 @@
 	  <td style="text-align: left" colspan=3>Text: 什么？大个居然变成石头啦！(English: What? big guy turned to stone!)</td>
 	</tr>
     <tr>
-      <td style="text-align: left"><audio src="demo/ref_emo/241722-sur.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/ref_spk/db2_003485.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/multi-r/210091_sur.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/taslp/210091_sur.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/pan/210091_sur.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/pro/210091_sur.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/spk/ref_spk/210091_sur.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/spk/anyspk/241722-sur.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/spk/unet/db2_003485.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/spk/valle/210091_sur.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/spk/pro/210091_sur.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/spk/pro500h/210091_sur.wav" controls="" preload=""></audio></td>
     </tr>
     <tr>
       <!-- <td style="text-align: left" rowspan=2>Happy</td> -->
@@ -152,11 +150,11 @@
    
   </tbody>
 </table>
-<h3>Short summary: It can be found that compared with Multi-R, CSET, and PB, the proposed CSPC can achieve a good balance between maintaining the target speaker's timbre and enriching the transferred emotional expression.</a></h2>
+<h3>Short summary: It can be found that compared with AnySpk, Unet-TTS, and Valle, the proposed U-style can achieve xxxxxxxxxx.</a></h2>
 
 <br><br>
-<h2>3. Demos -- The necessity of emotion embedding and prosody compensation<a name="ablation 4.2.1"></a></h2>
-<h3>Corresponding to section 4.2.1 in the paper, samples synthesized by CSPC and also CSPC' variants that without emotion embedding (w/o EE) or prosody compensation embedding (w/o PCE) on the emotion transfer task are listed below.</h3>
+<h2>3. Demos -- Spealer and style cloning<a name="ablation 4.2.1"></a></h2>
+<h3>Corresponding to section IV-G in the paper. </h3>
 
 <table>
   <thead>
