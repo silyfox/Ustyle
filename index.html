@@ -47,8 +47,8 @@
 <p>Zero-shot speaker cloning text-to-speech (TTS) aims to synthesize speech with unseen target speaker timbre derived from a single reference speech. 
   However, the naturalness and speaker similarity of synthesized speech by existing methods are still undesirable, and endowing the target speaker with arbitrary styles is not considered, 
   i.e., zero-shot speaker and style cloning, where a unique challenge is learning the disentangled speaker and style representation from the references with arbitrary speakers and styles. 
-  To address the above challenges, we propose \textbf{U-style}, employing Grad-TTS as the backbone, introducing a speaker-specific and a style-specific converter between the text encoder 
-  and the diffusion decoder, decomposing U-style into speaker- and style-specific modeling parts via signal perturbation between the two converters to achieve speaker and style disentanglement 
+  To address the above challenges, we propose \textbf{U-Style}, employing Grad-TTS as the backbone, introducing a speaker-specific and a style-specific converter between the text encoder 
+  and the diffusion decoder, decomposing U-Style into speaker- and style-specific modeling parts via signal perturbation between the two converters to achieve speaker and style disentanglement 
   automatically. To improve unseen speaker and style modeling ability, these two converters conduct multi-level speaker and style modeling by skip-connected U-net, which incorporates the 
   representation extraction and information reconstruction process. Besides, to improve the naturalness of synthesized speech, we adopt mean-based instance normalization and style adaptive 
   layer normalization pairs in these converters to perform representation extraction and condition adaptation, respectively. Experimental results show that U-style surpasses the 
@@ -70,8 +70,8 @@
       <th style="text-align: center"><strong>AnySpk</strong></th>
       <th style="text-align: center"><strong>Unet-TTS</strong></th>
       <th style="text-align: center"><strong>Valle</strong></th>
-      <th style="text-align: center"><strong>U-style-100</strong></th>
-      <th style="text-align: center"><strong>U-style-500</strong></th>
+      <th style="text-align: center"><strong>U-Style-100</strong></th>
+      <th style="text-align: center"><strong>U-Style-500</strong></th>
     </tr>
   </thead>
   <tbody>
@@ -150,9 +150,9 @@
    
   </tbody>
 </table>
-<h3>Short summary: It can be found that compared with AnySpk, Unet-TTS, and Valle, the proposed U-style has the advantage of capturing detailed unseen speakers' timbre and style 
+<h3>Short summary: It can be found that compared with AnySpk, Unet-TTS, and Valle, the proposed U-Style has the advantage of capturing detailed unseen speakers' timbre and style 
   characteristics, allowing the adoption of expressive reference to guide the robust zero-shot speaker cloning of arbitrary text.
-  As we can observed, the pitch trajectory of the U-style synthesized speech closely matches the pattern of the reference speech.</a></h2>
+  As we can observed, the pitch trajectory of the U-Style synthesized speech closely matches the pattern of the reference speech.</a></h2>
 
 <br><br>
 <h2>3. Demos -- Spealer and style cloning<a name="ablation 4.2.1"></a></h2>
@@ -239,8 +239,8 @@
    
   </tbody>
 </table>
-<h3>Short summary: It can be found that the proposed U-style can disentangle the speaker and style in the zero-shot scenario, transferring the style from an unseen source speaker to another unseen target speaker.
-  However, regarding overall performance in speaker and style cloning, U-style still has room to improve the naturalness of synthesized speech and the trade-off between timbre and expressiveness.</a></h2>
+<h3>Short summary: It can be found that the proposed U-Style can disentangle the speaker and style in the zero-shot scenario, transferring the style from an unseen source speaker to another unseen target speaker.
+  However, regarding overall performance in speaker and style cloning, U-Style still has room to improve the naturalness of synthesized speech and the trade-off between timbre and expressiveness.</a></h2>
 
 <!-- <br><br>
 <h2>4. Demos -- The effectiveness of GC block<a name="ablation 4.2.2"></a></h2>
