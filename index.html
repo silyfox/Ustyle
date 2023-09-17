@@ -151,7 +151,8 @@
   </tbody>
 </table>
 <h3>Short summary: It can be found that compared with AnySpk, Unet-TTS, and Valle, the proposed U-style has the advantage of capturing detailed unseen speakers' timbre and style 
-  characteristics, allowing the adoption of expressive reference to guide the robust zero-shot speaker cloning of arbitrary text.</a></h2>
+  characteristics, allowing the adoption of expressive reference to guide the robust zero-shot speaker cloning of arbitrary text.
+  As we can observed, the pitch trajectory of the U-style synthesized speech closely matches the pattern of the reference speech.</a></h2>
 
 <br><br>
 <h2>3. Demos -- Spealer and style cloning<a name="ablation 4.2.1"></a></h2>
@@ -172,74 +173,74 @@
   <tbody>
     <tr>
       <!-- <td style="text-align: left" rowspan=2>Surprise</td> -->
-	  <td style="text-align: left" colspan=2>Text: 天哪！梦中的一切成真了！(English: My god! Everything in the dream came true!)</td>
+	  <td style="text-align: left" colspan=2>Text: 童孙未解供耕织，也傍桑阴学种瓜。(English: Tong Sun did not yet understand the cultivation and weaving, but also learned to plant melons in the shade of mulberry trees.)</td>
 	</tr>
 	<tr>
-      <td style="text-align: left"><audio src="demo/spk/ref_spk//241722-sur.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/ref_spk/db2_003491.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/pconly/210092_sur.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/spksty/spk/060202_SSB03850272_2602015002.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/spksty/sty/060202_SSB03850272_2602015002.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/spksty/pro/060202_SSB03850272_2602015002.wav" controls="" preload=""></audio></td>
       <!-- <td style="text-align: left"><audio src="demo/eeonly/210092_sur.wav" controls="" preload=""></audio></td>
       <td style="text-align: left"><audio src="demo/pro/210092_sur.wav" controls="" preload=""></audio></td> -->
     </tr>
     <tr>
       <!-- <td style="text-align: left" rowspan=2>Happy</td> -->
-	  <td style="text-align: left" colspan=2>Text: 散散步，呼吸下新鲜空气，整个人都神清气爽了呢。(English: Take a walk and get some fresh air, i feel refreshed and refreshed.)</td>
+	  <td style="text-align: left" colspan=2>Text: 岭外音书断，经冬复历春。近乡情更怯，不敢问来人。(English: The sound outside the mountain is interrupted by a book, and the spring is repeated through winter. Being closer to the countryside is even more timid, afraid to ask anyone.)</td>
 	</tr>
 	<tr>
-      <td style="text-align: left"><audio src="demo/spk/ref_spk//210490-hap.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/ref_spk/db2_003486.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/pconly/220062_hap.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/spksty/spk/060201_SSB03850272_2602015002.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/spksty/sty/060201_SSB03850272_2602015002.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/spksty/pro/060201_SSB03850272_2602015002.wav" controls="" preload=""></audio></td>
       <!-- <td style="text-align: left"><audio src="demo/eeonly/220062_hap.wav" controls="" preload=""></audio></td>
       <td style="text-align: left"><audio src="demo/pro/220062_hap.wav" controls="" preload=""></audio></td> -->
     </tr>
       <tr>
       <!-- <td style="text-align: left" rowspan=2>Sadness</td> -->
-	  <td style="text-align: left" colspan=2>Text: 我的显示器又花屏了。(English: My monitor is blurred again.)</td>
+	  <td style="text-align: left" colspan=2>Text: 最令人吃惊的是，穷人从事生产活动，而富人却坐享其成。(English: The most surprising thing is that the poor engage in productive activities, while the rich enjoy the benefits.)</td>
 	</tr>
 	<tr>
-      <td style="text-align: left"><audio src="demo/spk/ref_spk//231939-sad.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/ref_spk/db2_003489.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/pconly/230665_sad.wav" controls="" preload=""></audio></td>
+    <td style="text-align: left"><audio src="demo/spksty/spk/240391_SSB03858_241307-su.wav" controls="" preload=""></audio></td>
+    <td style="text-align: left"><audio src="demo/spksty/sty/240391_SSB03858_241307-su.wav" controls="" preload=""></audio></td>
+    <td style="text-align: left"><audio src="demo/spksty/pro/240391_SSB03858_241307-su.wav" controls="" preload=""></audio></td>
       <!-- <td style="text-align: left"><audio src="demo/eeonly/230665_sad.wav" controls="" preload=""></audio></td>
       <td style="text-align: left"><audio src="demo/pro/230665_sad.wav" controls="" preload=""></audio></td> -->
     </tr>
     <tr>
       <!-- <td style="text-align: left" rowspan=2>Angry</td> -->
-	  <td style="text-align: left" colspan=2>Text: 快跟我回去！(English: Come back with me!)</td>
+	  <td style="text-align: left" colspan=2>Text: 他生性胆小懦弱，遇事优柔寡断，是不足以担当大任。(English: He is naturally timid and indecisive, making him insufficient to take on important responsibilities.)</td>
 	</tr>
 	<tr>
-      <td style="text-align: left"><audio src="demo/spk/ref_spk//220353-ang.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/ref_spk/db2_003489.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/pconly/240064_ang.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/spksty/spk/250269_SSB0145_251283-f.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/spksty/spk/250269_SSB0145_251283-f.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/spksty/pro/250269_SSB0145_251283-f.wav" controls="" preload=""></audio></td>
       <!-- <td style="text-align: left"><audio src="demo/eeonly/240064_ang.wav" controls="" preload=""></audio></td>
       <td style="text-align: left"><audio src="demo/pro/240064_ang.wav" controls="" preload=""></audio></td> -->
     </tr>
    <tr>
       <!-- <td style="text-align: left" rowspan=2>Disgust</td> -->
-	  <td style="text-align: left" colspan=2>Text: 看见你我就想踹飞你。(English: When I see you, I want to kick you.)</td>
+	  <td style="text-align: left" colspan=2>Text: 你们竟然做出这样的事情，真是让人气愤不已！(English: It's really infuriating that you should have done such a thing!)</td>
 	</tr>
 	<tr>
-      <td style="text-align: left"><audio src="demo/spk/ref_spk//261542-dis.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/ref_spk/db2_003487.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/pconly/250265_dis.wav" controls="" preload=""></audio></td>
+    <td style="text-align: left"><audio src="demo/spksty/spk/220089_SSB03857_221985-a.wav" controls="" preload=""></audio></td>
+    <td style="text-align: left"><audio src="demo/spksty/spk/220089_SSB03857_221985-a.wav" controls="" preload=""></audio></td>
+    <td style="text-align: left"><audio src="demo/spksty/pro/220089_SSB03857_221985-a.wav" controls="" preload=""></audio></td>
       <!-- <td style="text-align: left"><audio src="demo/eeonly/250265_dis.wav" controls="" preload=""></audio></td>
       <td style="text-align: left"><audio src="demo/pro/250265_dis.wav" controls="" preload=""></audio></td> -->
     </tr>
     <tr>
       <!-- <td style="text-align: left" rowspan=2>Fear</td> -->
-	  <td style="text-align: left" colspan=2>Text: 走开，不要靠近我。(English: Go away, don't come near me.)</td>
+	  <td style="text-align: left" colspan=2>Text: 他们还可能肢解过死婴的尸体，用于研究目的。(English: They may also have dismembered the bodies of dead infants for research purposes.)</td>
 	</tr>
-	<tr>
-      <td style="text-align: left"><audio src="demo/spk/ref_spk//250005-fea.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/ref_spk/db2_003489.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="demo/pconly/260562_fea.wav" controls="" preload=""></audio></td>
+  <td style="text-align: left"><audio src="demo/spksty/spk/060112_0603002009_0701007012.wav" controls="" preload=""></audio></td>
+  <td style="text-align: left"><audio src="demo/spksty/spk/060112_0603002009_0701007012.wav" controls="" preload=""></audio></td>
+  <td style="text-align: left"><audio src="demo/spksty/pro/060112_0603002009_0701007012.wav" controls="" preload=""></audio></td>
       <!-- <td style="text-align: left"><audio src="demo/eeonly/260562_fea.wav" controls="" preload=""></audio></td>
       <td style="text-align: left"><audio src="demo/pro/260562_fea.wav" controls="" preload=""></audio></td> -->
     </tr>
    
   </tbody>
 </table>
-<h3>Short summary: It can be found that the prosody compensation embedding can provide extra emotion information to the emotion embedding, and the proposed prosody compensation method can effectively improve the emotion transfer performance and mean-while maintain the target speaker’s voice.</a></h2>
+<h3>Short summary: It can be found that the proposed U-style can disentangle the speaker and style in the zero-shot scenario, transferring the style from an unseen source speaker to another unseen target speaker.
+  However, regarding overall performance in speaker and style cloning, U-style still has room to improve the naturalness of synthesized speech and the trade-off between timbre and expressiveness.</a></h2>
 
 <!-- <br><br>
 <h2>4. Demos -- The effectiveness of GC block<a name="ablation 4.2.2"></a></h2>
