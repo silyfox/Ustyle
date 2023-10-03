@@ -44,16 +44,12 @@
 
 <br>
 <h2 id="abstract">1. Abstract<a name="abstract"></a></h2>
-<p>Zero-shot speaker cloning text-to-speech (TTS) aims to synthesize speech with unseen target speaker timbre derived from a single reference speech. 
-  However, the naturalness and speaker similarity of synthesized speech by existing methods are still undesirable, and endowing the target speaker with arbitrary styles is not considered, 
-  i.e., zero-shot speaker and style cloning, where a unique challenge is learning the disentangled speaker and style representation from the references with arbitrary speakers and styles. 
-  To address the above challenges, we propose \textbf{U-Style}, employing Grad-TTS as the backbone, introducing a speaker-specific and a style-specific converter between the text encoder 
-  and the diffusion decoder, decomposing U-Style into speaker- and style-specific modeling parts via signal perturbation between the two converters to achieve speaker and style disentanglement 
-  automatically. To improve unseen speaker and style modeling ability, these two converters conduct multi-level speaker and style modeling by skip-connected U-net, which incorporates the 
-  representation extraction and information reconstruction process. Besides, to improve the naturalness of synthesized speech, we adopt mean-based instance normalization and style adaptive 
-  layer normalization pairs in these converters to perform representation extraction and condition adaptation, respectively. Experimental results show that U-style surpasses the 
-  state-of-the-art methods regarding naturalness and speaker similarity on unseen speaker cloning, and can further transfer the style from an unseen source speaker to another unseen target speaker.
-
+<p>Zero-shot speaker cloning aims to synthesize speech for any target speaker unseen during TTS system building, given only a single speech reference of the speaker at hand. Although more practical in real applications, the current zero-shot methods still produce speech with undesirable naturalness and speaker similarity. Moreover, endowing the target speaker with arbitrary speaking styles in the zero-shot setup has not been considered. This is because the unique challenge of zero-shot speaker and style cloning is to learn the disentangled speaker and style representations from only short references representing an arbitrary speaker and an arbitrary style. 
+  To address this challenge, we propose U-Style, which employs Grad-TTS as the backbone, particularly cascading a speaker-specific encoder and a style-specific encoder between the text encoder and the diffusion decoder. 
+  Thus, leveraging signal perturbation, U-Style is explicitly decomposed into speaker- and style-specific modeling parts, achieving better speaker and style disentanglement. 
+  To improve unseen speaker and style modeling ability, these two encoders conduct multi-level speaker and style modeling by skip-connected U-nets, incorporating the representation extraction and information reconstruction process. 
+  Besides, to improve the naturalness of synthetic speech, we adopt mean-based instance normalization and style adaptive layer normalization in these encoders to perform representation extraction and condition adaptation, respectively. Experiments show that U-Style significantly surpasses the state-of-the-art methods in unseen speaker cloning regarding naturalness and speaker similarity.
+  Notably, U-Style can transfer the style from an unseen source speaker to another unseen target speaker, achieving flexible combinations of desired speaker timbre and style in zero-shot voice cloning.
 </p>
 <h3>1.1 The structure of the proposed model:</h3>
 	<center><img src='U-style.png'></center>
